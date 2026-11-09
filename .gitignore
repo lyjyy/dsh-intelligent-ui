@@ -1,0 +1,17 @@
+# DSH ops 更新锁文件（本机工具产生，与包内容无关）
+.dsh-ops-update-*.lock
+
+# 依赖与系统垃圾
+node_modules/
+Thumbs.db
+desktop.ini
+.DS_Store
+*~
+
+# 截图基线的比对产物（改样式时由 test/screenshot.mjs 写出）
+*.diff.png
+_tmp/
+
+# 内部交接手册：含本机路径、会话记录与端口等私人信息，不随公开仓库发布。
+# 本地保留，供维护者自己看。
+HANDOVER.md

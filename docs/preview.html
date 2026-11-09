@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dsh-intelligent-ui · 组件预览</title>
+<style>
+		:root {
+			--dsw-radius-xs: 4px;
+			--dsw-radius-sm: 6px;
+			--dsw-radius-md: 8px;
+			--dsw-radius-lg: 12px;
+			--dsw-corner-shape: round;
+			--dsw-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+			--dsw-font-markdown-code-font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Consolas, monospace;
+			--ds-transition-duration: 0.16s;
+			--ds-transition-duration-fast: 0.10s;
+			--ds-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+			--dsw-alias-bg-layer-1: #ffffff;
+			--dsw-alias-bg-layer-2: #f6f6f7;
+			--dsw-alias-border-l3: rgba(0,0,0,0.10);
+			--dsw-alias-border-l4: rgba(0,0,0,0.16);
+			--dsw-alias-brand-primary: #4d6bfe;
+			--dsw-alias-link: #4d6bfe;
+			--dsw-alias-button-primary-fill: #4d6bfe;
+			--dsw-alias-button-primary-hover: #3f5ce8;
+			--dsw-alias-label-primary: rgba(0,0,0,0.92);
+			--dsw-alias-label-primary-foreground: #ffffff;
+			--dsw-alias-label-secondary: rgba(0,0,0,0.62);
+			--dsw-alias-label-tertiary: rgba(0,0,0,0.44);
+			--dsw-alias-label-dimmed: rgba(0,0,0,0.30);
+			--dsw-alias-interactive-bg-hover: rgba(0,0,0,0.05);
+			--dsw-alias-interactive-bg-active: rgba(0,0,0,0.09);
+			--dsw-alias-markdown-code-block: #f6f6f7;
+			--dsw-alias-markdown-code-block-banner: rgba(0,0,0,0.04);
+			--dsw-alias-markdown-inline-code: rgba(0,0,0,0.06);
+			--dsw-alias-code-diff-added: rgba(34,197,94,0.14);
+			--dsw-alias-code-diff-deleted: rgba(239,68,68,0.14);
+			--dsw-alias-state-success-primary: #16a34a;
+			--dsw-alias-state-warn-primary: #d97706;
+			--dsw-alias-state-error-primary: #dc2626;
+			--dsw-alias-state-business-primary: #4d6bfe;
+			--dsw-alias-state-idle-primary: rgba(0,0,0,0.35);
+			--dsw-alias-scrollbar-bg-l2: rgba(0,0,0,0.16);
+			--dsw-alias-scrollbar-hover-l2: rgba(0,0,0,0.30);
+			--dsw-static-amber-400: #fbbf24;
+			--dsw-static-green-500: #22c55e;
+			--dsw-static-red-600: #dc2626;
+			--dsw-static-deepseek-450: #4d6bfe;
+			--dsw-elevation-soft: 0 1px 2px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.06);
+			--dsw-focus-ring-color: rgba(77,107,254,0.5);
+			--dsw-focus-ring-width: 2px;
+			color-scheme: light;
+		}
+
+		:root[data-theme="dark"] {
+			--dsw-radius-xs: 4px;
+			--dsw-radius-sm: 6px;
+			--dsw-radius-md: 8px;
+			--dsw-radius-lg: 12px;
+			--dsw-corner-shape: round;
+			--dsw-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+			--dsw-font-markdown-code-font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Consolas, monospace;
+			--ds-transition-duration: 0.16s;
+			--ds-transition-duration-fast: 0.10s;
+			--ds-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+			--dsw-alias-bg-layer-1: #26272b;
+			--dsw-alias-bg-layer-2: #1c1d20;
+			--dsw-alias-border-l3: rgba(255,255,255,0.10);
+			--dsw-alias-border-l4: rgba(255,255,255,0.16);
+			--dsw-alias-brand-primary: #7d92ff;
+			--dsw-alias-link: #7d92ff;
+			--dsw-alias-button-primary-fill: #4d6bfe;
+			--dsw-alias-button-primary-hover: #5f79ff;
+			--dsw-alias-label-primary: rgba(255,255,255,0.92);
+			--dsw-alias-label-primary-foreground: #ffffff;
+			--dsw-alias-label-secondary: rgba(255,255,255,0.66);
+			--dsw-alias-label-tertiary: rgba(255,255,255,0.46);
+			--dsw-alias-label-dimmed: rgba(255,255,255,0.30);
+			--dsw-alias-interactive-bg-hover: rgba(255,255,255,0.07);
+			--dsw-alias-interactive-bg-active: rgba(255,255,255,0.12);
+			--dsw-alias-markdown-code-block: rgba(0,0,0,0.32);
+			--dsw-alias-markdown-code-block-banner: rgba(255,255,255,0.06);
+			--dsw-alias-markdown-inline-code: rgba(255,255,255,0.10);
+			--dsw-alias-code-diff-added: rgba(34,197,94,0.18);
+			--dsw-alias-code-diff-deleted: rgba(239,68,68,0.18);
+			--dsw-alias-state-success-primary: #4ade80;
+			--dsw-alias-state-warn-primary: #fbbf24;
+			--dsw-alias-state-error-primary: #f87171;
+			--dsw-alias-state-business-primary: #7d92ff;
+			--dsw-alias-state-idle-primary: rgba(255,255,255,0.40);
+			--dsw-alias-scrollbar-bg-l2: rgba(255,255,255,0.18);
+			--dsw-alias-scrollbar-hover-l2: rgba(255,255,255,0.32);
+			--dsw-static-amber-400: #fbbf24;
+			--dsw-static-green-500: #22c55e;
+			--dsw-static-red-600: #dc2626;
+			--dsw-static-deepseek-450: #7d92ff;
+			--dsw-elevation-soft: 0 1px 2px rgba(0,0,0,0.4), 0 6px 18px rgba(0,0,0,0.35);
+			--dsw-focus-ring-color: rgba(125,146,255,0.55);
+			--dsw-focus-ring-width: 2px;
+			color-scheme: dark;
+		}
+
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	padding: 28px 32px 64px;
+	background: var(--dsw-alias-bg-layer-2);
+	color: var(--dsw-alias-label-primary);
+	font-family: var(--dsw-font-family);
+	font-size: 13px;
+	line-height: 1.5;
+}
+header.pv-head { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+header.pv-head h1 { font-size: 16px; margin: 0; font-weight: 600; }
+button.pv-toggle {
+	margin-left: auto; font: inherit; font-size: 12px; cursor: pointer;
+	color: var(--dsw-alias-label-primary); background: var(--dsw-alias-bg-layer-1);
+	border: 1px solid var(--dsw-alias-border-l3); border-radius: var(--dsw-radius-sm);
+	padding: 5px 10px;
+}
+p.pv-note { color: var(--dsw-alias-label-tertiary); margin: 0 0 20px; font-size: 12px; }
+.pv-panel { margin-bottom: 18px; }
+.pv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 18px 16px; align-items: start; }
+.pv-cell { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.pv-cell--wide { grid-column: 1 / -1; }
+.pv-cell > .iui-panel { margin: 0; }
+.pv-kind {
+	font: 500 10.5px/1.4 var(--dsw-font-markdown-code-font-family);
+	letter-spacing: 0.06em;
+	color: var(--dsw-alias-label-tertiary);
+}
+.pv-h2 { font-size: 13px; font-weight: 600; margin: 26px 0 0; color: var(--dsw-alias-label-secondary); }
+</style>
+<style>
+/* plugin stylesheet, verbatim */
+.iui-panel{--iui-accent:var(--dsw-alias-brand-primary,#3b82f6);--iui-focus-c:var(--dsw-focus-ring-color,var(--dsw-alias-state-business-primary,#3b82f6));--iui-focus-w:var(--dsw-focus-ring-width,2px);--iui-fg:var(--dsw-alias-label-primary,inherit);--iui-fg2:var(--dsw-alias-label-secondary,rgba(128,128,128,.95));--iui-fg3:var(--dsw-alias-label-tertiary,rgba(128,128,128,.78));--iui-dim:var(--dsw-alias-label-dimmed,rgba(128,128,128,.6));--iui-fg:color-mix(in srgb, var(--dsw-alias-label-primary,#141414) 74%, var(--iui-surface));--iui-fg2:color-mix(in srgb, var(--dsw-alias-label-secondary,rgba(128,128,128,.95)) 88%, var(--iui-surface));--iui-fg3:color-mix(in srgb, var(--dsw-alias-label-tertiary,rgba(128,128,128,.78)) 94%, var(--iui-surface));--iui-fg-strong:color-mix(in srgb, var(--dsw-alias-label-primary,#141414) 86%, var(--iui-surface));--iui-on-accent:var(--dsw-alias-label-primary-foreground,#fff);--iui-link:var(--dsw-alias-link,var(--dsw-alias-brand-primary,#3b82f6));--iui-ok:var(--dsw-alias-state-success-primary,#16a34a);--iui-warn:var(--dsw-alias-state-warn-primary,#d97706);--iui-err:var(--dsw-alias-state-error-primary,#dc2626);--iui-idle:var(--dsw-alias-state-idle-primary,rgba(128,128,128,.6));--iui-add:var(--dsw-alias-code-diff-added,rgba(22,163,74,.13));--iui-del:var(--dsw-alias-code-diff-deleted,rgba(220,38,38,.13));--iui-surface:var(--dsw-alias-bg-layer-1,rgba(128,128,128,.06));--iui-fill2:var(--dsw-alias-bg-layer-2,rgba(128,128,128,.12));--iui-fill:var(--dsw-alias-interactive-bg-hover,rgba(128,128,128,.1));--iui-fill-a:var(--dsw-alias-interactive-bg-active,rgba(128,128,128,.16));--iui-line:var(--dsw-alias-border-l3,rgba(128,128,128,.34));--iui-line2:var(--dsw-alias-border-l4,rgba(128,128,128,.5));--iui-code-bg:var(--dsw-alias-markdown-code-block,rgba(128,128,128,.1));--iui-code-banner:var(--dsw-alias-markdown-code-block-banner,rgba(128,128,128,.14));--iui-code-inline:var(--dsw-alias-markdown-inline-code,rgba(128,128,128,.16));--iui-font:var(--dsw-font-family,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif);--iui-mono:var(--dsw-font-markdown-code-font-family,ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace);--iui-r-xs:var(--dsw-radius-xs,4px);--iui-r-sm:var(--dsw-radius-sm,8px);--iui-r-md:var(--dsw-radius-md,12px);--iui-r-lg:var(--dsw-radius-lg,16px);--iui-ease:var(--ds-ease-in-out,cubic-bezier(.4,0,.2,1));--iui-t-fast:var(--ds-transition-duration-fast,.1s);--iui-t:var(--ds-transition-duration,.2s);--iui-corner:var(--dsw-corner-shape,superellipse(1.5));--iui-shadow:var(--dsw-elevation-soft,none);--iui-accent-fill:var(--iui-accent);--iui-accent-fill:color-mix(in srgb, var(--iui-accent) 78%, var(--iui-surface));--iui-accent-edge:color-mix(in srgb, var(--iui-accent) 42%, var(--iui-line));--iui-accent-weak:color-mix(in srgb, var(--iui-accent) 12%, transparent);--iui-ok-fill:color-mix(in srgb, var(--iui-ok) 78%, var(--iui-surface));--iui-warn-fill:color-mix(in srgb, var(--iui-warn) 78%, var(--iui-surface));--iui-err-fill:color-mix(in srgb, var(--iui-err) 78%, var(--iui-surface));--iui-ok-text:color-mix(in srgb, var(--iui-ok) 72%, var(--iui-fg));--iui-warn-text:color-mix(in srgb, var(--iui-warn) 72%, var(--iui-fg));--iui-err-text:color-mix(in srgb, var(--iui-err) 72%, var(--iui-fg));--iui-add-fill:color-mix(in srgb, var(--iui-add) 76%, transparent);--iui-del-fill:color-mix(in srgb, var(--iui-del) 76%, transparent);box-sizing:border-box;color:var(--iui-fg);font-family:var(--iui-font);font-size:13.5px;line-height:1.5;corner-shape:var(--iui-corner);background:var(--iui-surface);background:color-mix(in srgb, var(--iui-surface) 90%, var(--iui-fill2));border:.5px solid var(--iui-line);border-radius:var(--iui-r-lg);padding:11px 13px 12px;margin:6px 0;display:flex;flex-direction:column;gap:10px;color-scheme:light dark;animation:iui-in .18s var(--iui-ease)}.iui-panel.is-light{color-scheme:light}.iui-panel.is-dark{color-scheme:dark}.iui-panel *{box-sizing:border-box}.iui-head{display:flex;flex-direction:column;gap:3px}.iui-eyebrow{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--iui-fg3)}.iui-dot{width:6px;height:6px;border-radius:50%;corner-shape:round;background:var(--iui-accent);box-shadow:0 0 0 3px var(--iui-fill2)}.iui-ver{margin-left:auto;padding:1px 5px;font-size:10px;letter-spacing:0;text-transform:none;color:var(--iui-fg3);background:var(--iui-fill);border:1px solid var(--iui-line2);border-radius:var(--iui-r-xs)}.iui-title{font-size:14.5px;font-weight:600;line-height:1.35;color:var(--iui-fg-strong)}.iui-subtitle{font-size:12.5px;color:var(--iui-fg3)}.iui-body{display:flex;flex-direction:column;gap:10px}.iui-text{margin:0;color:var(--iui-fg2)}.iui-text--warn{color:var(--iui-warn-text)}.iui-text--error{color:var(--iui-err-text)}.iui-text--ok{color:var(--iui-ok-text)}.iui-text--quote{margin:0;padding:2px 0 2px 10px;border-left:2px solid var(--iui-line2);color:var(--iui-fg3)}.iui-label{font-size:12.5px;font-weight:600}.iui-hint{font-size:11.5px;font-weight:400;color:var(--iui-fg3)}.iui-muted{font-size:12.5px;color:var(--iui-fg3)}.iui-note{font-size:11.5px;color:var(--iui-err-text)}.iui-foot-hint{flex:1 1 100%;margin:0;font-size:11.5px;line-height:1.45;color:var(--iui-fg3)}.iui-count{font-size:10.5px;color:var(--iui-fg3);font-variant-numeric:tabular-nums}.iui-count.is-over{color:var(--iui-err-text)}.iui-req{color:var(--iui-err-text);font-weight:600;font-style:normal;margin-left:2px}.iui-field.is-missing .iui-input,.iui-field.is-missing .iui-area{border-color:var(--iui-err-text)}.iui-link{color:var(--iui-link);text-decoration:none;align-self:flex-start}.iui-link:hover{text-decoration:underline;text-underline-offset:2px}.iui-select,.iui-input,.iui-area{width:100%;height:32px;padding:0 9px;color:var(--iui-fg);background:var(--iui-surface);border:.5px solid var(--iui-line2);border-radius:var(--iui-r-md);corner-shape:var(--iui-corner);font-family:inherit;font-size:13px;line-height:30px}.iui-area{height:auto;min-height:64px;padding:7px 9px;line-height:1.5;resize:vertical}.iui-select:focus,.iui-input:focus,.iui-area:focus{border-color:var(--iui-focus-c);outline:none;box-shadow:0 0 0 3px var(--iui-accent-weak)}.iui-select{appearance:none;-webkit-appearance:none;padding-right:28px;line-height:normal;cursor:pointer}.iui-select-wrap{position:relative;display:block;width:100%}.iui-select-wrap::after{content:"";position:absolute;right:11px;top:50%;width:6px;height:6px;margin-top:-4px;border-right:1.5px solid var(--iui-fg3);border-bottom:1.5px solid var(--iui-fg3);transform:rotate(45deg);pointer-events:none}.iui-select:disabled,.iui-input:disabled,.iui-area:disabled,.iui-range:disabled{opacity:.55;cursor:not-allowed}.iui-input[type=number]{appearance:textfield;-moz-appearance:textfield}.iui-input[type=number]::-webkit-outer-spin-button,.iui-input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}.iui-btn:focus-visible,.iui-card:focus-visible,.iui-tab:focus-visible,.iui-tree-toggle:focus-visible,.iui-copy:focus-visible,.iui-reload:focus-visible,.iui-check input:focus-visible{outline:var(--iui-focus-w) solid var(--iui-focus-c);outline-offset:1px}.iui-card:disabled{opacity:.6;cursor:default}.iui-card:disabled:hover{background:var(--iui-surface)}.iui-input::placeholder,.iui-area::placeholder{color:var(--iui-dim)}.iui-field{display:flex;flex-direction:column;gap:5px}.iui-row{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.iui-inline{display:flex;gap:6px;align-items:stretch}.iui-inline .iui-input{flex:1 1 auto;min-width:0}.iui-form{display:flex;flex-direction:column;gap:9px}.iui-value{font-variant-numeric:tabular-nums;font-weight:600}.iui-unit{font-size:11px;font-weight:400;color:var(--iui-fg3)}.iui-range{width:100%;accent-color:var(--iui-accent)}.iui-check{display:flex;align-items:flex-start;gap:8px;cursor:pointer}.iui-check input{flex:0 0 auto;width:16px;height:16px;margin:1px 0 0;accent-color:var(--iui-accent);cursor:inherit}.iui-pick{width:15px;height:15px;accent-color:var(--iui-accent);vertical-align:-2px}.iui-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:7px}.iui-card{position:relative;min-width:0;min-height:38px;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:10px 12px;color:var(--iui-fg);background:var(--iui-surface);border:.5px solid var(--iui-line2);border-radius:var(--iui-r-md);corner-shape:var(--iui-corner);box-shadow:var(--iui-shadow);font:inherit;text-align:left;cursor:pointer}.iui-card:hover:not(:disabled){background:var(--iui-fill);border-color:var(--iui-line)}.iui-card.is-on{border-color:var(--iui-accent);background:var(--iui-accent-weak);box-shadow:inset 0 0 0 .5px var(--iui-accent)}.iui-card.is-on::after{content:"\2713";position:absolute;top:7px;right:8px;display:flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:var(--iui-accent);color:var(--iui-on-accent);font-size:10px;font-weight:700;line-height:1}.iui-card-title{font-size:12.5px;font-weight:600;line-height:1.35}.iui-card-desc{font-size:11.5px;line-height:1.45;color:var(--iui-fg3)}.iui-foot{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.iui-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:32px;padding:0 13px;font-family:inherit;font-size:13px;font-weight:500;color:var(--iui-fg);background:var(--iui-fill2);border:.5px solid transparent;border-radius:var(--iui-r-sm);corner-shape:var(--iui-corner);cursor:pointer}.iui-btn:hover:not(:disabled){background:var(--iui-fill-a)}.iui-btn:active:not(:disabled){transform:scale(.985)}.iui-btn:disabled{opacity:.45;cursor:default}.iui-btn--primary{background:var(--dsw-alias-button-primary-fill,var(--iui-accent));color:var(--iui-on-accent)}.iui-btn--primary:hover:not(:disabled){background:var(--dsw-alias-button-primary-hover,var(--iui-accent));filter:brightness(1.06)}.iui-btn--ghost{background:transparent;border-color:var(--iui-line2)}.iui-btn--ghost:hover:not(:disabled){background:var(--iui-fill)}.iui-btn--danger{background:var(--iui-err-fill);color:var(--iui-on-accent)}.iui-btn--danger:hover:not(:disabled){filter:brightness(1.06)}.iui-btn:focus-visible,.iui-card:focus-visible,.iui-tab:focus-visible,.iui-select:focus-visible,.iui-input:focus-visible,.iui-area:focus-visible,.iui-tree-toggle:focus-visible,.iui-copy:focus-visible{outline:var(--iui-focus-w) solid var(--iui-focus-c);outline-offset:2px}.iui-answered{display:flex;flex-direction:column;gap:9px;padding:10px 12px;background:var(--iui-fill2);border-radius:var(--iui-r-md)}.iui-ans-head{display:flex;align-items:center;gap:8px}.iui-ans-verdict{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;font-size:11.5px;font-weight:600;border-radius:999px}.iui-ans-verdict.is-ok{color:var(--iui-ok-text);background:var(--iui-ok-fill)}.iui-ans-verdict.is-act{color:var(--iui-accent);background:var(--iui-accent-weak)}.iui-ans-verdict.is-off{color:var(--iui-fg3);background:var(--iui-fill)}.iui-ans-copy{margin-left:auto;width:24px;min-width:24px;height:24px;padding:0;font-size:13px}.iui-ans-rows{display:flex;flex-direction:column;gap:7px}.iui-ans-details{display:flex;flex-direction:column;gap:9px}.iui-ans-more{display:flex;align-items:center;gap:5px;width:fit-content;font-size:11.5px;color:var(--iui-fg3);cursor:pointer;list-style:none;user-select:none;border-radius:var(--iui-r-sm)}.iui-ans-more::-webkit-details-marker{display:none}.iui-ans-more::marker{content:""}.iui-ans-more::before{content:"▸";font-size:9px;line-height:1;transition:transform var(--ds-transition-duration-fast,.1s) ease}.iui-ans-details[open]>.iui-ans-more::before{transform:rotate(90deg)}.iui-ans-more:hover{color:var(--iui-fg2)}.iui-ans-row{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.5}.iui-ans-k{flex:0 0 96px;max-width:38%;color:var(--iui-fg3)}.iui-ans-v{flex:1 1 auto;min-width:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.iui-chip{display:inline-flex;align-items:center;gap:4px;max-width:100%;padding:1px 9px;font-size:12px;line-height:1.6;border-radius:999px;background:var(--iui-fill);border:.5px solid var(--iui-line);overflow-wrap:anywhere}.iui-chip.is-on{color:var(--iui-accent);background:var(--iui-accent-weak);border-color:transparent}.iui-chip.is-ok{color:var(--iui-ok-text);background:var(--iui-ok-fill);border-color:transparent}.iui-chip.is-off{color:var(--iui-fg3);background:transparent}.iui-chip--mono{font-family:var(--iui-mono);font-size:11.5px}.iui-ans-muted{color:var(--iui-fg3)}.iui-ans-num{display:inline-flex;align-items:center;gap:7px;font-variant-numeric:tabular-nums}.iui-ans-bar{width:72px;height:5px;border-radius:999px;background:var(--iui-fill);overflow:hidden}.iui-ans-bar i{display:block;height:100%;border-radius:999px;background:var(--iui-accent-fill)}.iui-ans-text{white-space:pre-wrap;overflow-wrap:anywhere}.iui-ans-block{flex:1 1 100%;max-height:150px;overflow:auto;padding:7px 9px;font-family:var(--iui-mono);font-size:11.5px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--iui-code-bg);border-radius:var(--iui-r-sm)}.iui-ans-group{display:flex;flex-direction:column;gap:6px;width:100%;padding:8px 10px;border:.5px solid var(--iui-line);border-radius:var(--iui-r-sm)}.iui-ans-group .iui-ans-gtitle{font-size:11px;letter-spacing:.02em;color:var(--iui-fg3)}.iui-kv{display:flex;gap:8px;align-items:baseline;font-size:12.5px}.iui-kv b{min-width:88px;font-weight:600;color:var(--iui-fg3)}.iui-pre{margin:0;padding:9px 11px;max-height:220px;overflow:auto;font-family:var(--iui-mono);font-size:11.5px;line-height:1.5;white-space:pre-wrap;word-break:break-word;background:var(--iui-code-bg);border-radius:var(--iui-r-sm)}.iui-table-wrap{max-width:100%;overflow:auto;background:var(--iui-surface);border:.5px solid var(--iui-line);border-radius:var(--iui-r-md)}.iui-table{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px}.iui-table th,.iui-table td{padding:7px 10px;text-align:left;white-space:nowrap}.iui-table thead th{position:sticky;top:0;z-index:1;background:var(--iui-fill2);color:var(--iui-fg3);font-size:11px;font-weight:500;letter-spacing:.02em;text-transform:uppercase;border-bottom:.5px solid var(--iui-line);backdrop-filter:blur(6px)}.iui-table tbody td{border-bottom:.5px solid var(--iui-line)}.iui-table tbody tr:last-child td{border-bottom:0}.iui-table tbody tr.iui-tr--pick{cursor:pointer}.iui-table tbody tr.iui-tr--pick:hover td{background:var(--iui-fill)}.iui-table tbody tr.is-on td{background:var(--iui-fill2)}.iui-table tbody tr.is-on td:first-child{box-shadow:inset 2px 0 0 var(--iui-accent-edge)}.iui-td--num{text-align:right;font-variant-numeric:tabular-nums}.iui-td--mid{text-align:center}.iui-wizard{display:flex;flex-direction:column;gap:10px;padding:11px 12px;background:var(--iui-fill2);border-radius:var(--iui-r-md)}.iui-steps{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.iui-step{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--iui-fg3)}.iui-step.is-on{color:var(--iui-fg);font-weight:600}.iui-step.is-done{color:var(--iui-fg2)}.iui-step-no{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;corner-shape:round;border:.5px solid var(--iui-line2);font-size:10px;font-variant-numeric:tabular-nums}.iui-step.is-on .iui-step-no{background:var(--iui-accent);border-color:var(--iui-accent-edge);color:var(--iui-on-accent)}.iui-step.is-done .iui-step-no{background:var(--iui-surface);border-color:var(--iui-line)}.iui-step-title{font-size:12.5px;font-weight:600}.iui-step-body{display:flex;flex-direction:column;gap:11px}.iui-nav{display:flex;align-items:center;gap:7px}.iui-chart{display:block;width:100%;height:auto;overflow:visible}.iui-chart text{font-size:9.5px;fill:currentColor;opacity:.72}.iui-legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px}.iui-legend-item{display:flex;align-items:center;gap:5px}.iui-swatch{flex:0 0 auto;width:9px;height:9px;border-radius:2px}.iui-legend b{font-weight:600;font-variant-numeric:tabular-nums}.iui-grid{display:grid;gap:6px 12px}.iui-scroll{max-height:180px;overflow:auto}.iui-md{font-size:13px;line-height:1.62}.iui-md>:first-child{margin-top:0}.iui-md>:last-child{margin-bottom:0}.iui-md p{margin:0 0 8px}.iui-md h1,.iui-md h2,.iui-md h3,.iui-md h4{margin:13px 0 6px;font-weight:600;line-height:1.35}.iui-md h1{font-size:16px}.iui-md h2{font-size:14.5px}.iui-md h3{font-size:13.5px}.iui-md h4{font-size:13px}.iui-md ul,.iui-md ol{margin:0 0 8px;padding-left:20px}.iui-md li{margin:3px 0}.iui-md blockquote{margin:0 0 8px;padding:2px 0 2px 11px;border-left:2px solid var(--iui-line2);color:var(--iui-fg3)}.iui-md code{font-family:var(--iui-mono);font-size:11.5px;background:var(--iui-code-inline);border-radius:var(--iui-r-xs);padding:1px 4px}.iui-md a{color:var(--iui-link);text-decoration:none}.iui-md a:hover{text-decoration:underline;text-underline-offset:2px}.iui-md hr{border:0;border-top:.5px solid var(--iui-line);margin:11px 0}.iui-md table{border-collapse:collapse;margin:0 0 8px;font-size:12px}.iui-md th,.iui-md td{border:.5px solid var(--iui-line);padding:4px 8px;text-align:left}.iui-md th{background:var(--iui-fill2);font-weight:600}.iui-code{margin:0 0 8px}.iui-code-head{display:flex;align-items:center;gap:8px;padding:4px 5px 4px 10px;font-size:10.5px;color:var(--iui-fg3);background:var(--iui-code-banner);border:.5px solid var(--iui-line);border-bottom:0;border-radius:var(--iui-r-sm) var(--iui-r-sm) 0 0}.iui-code-lang{flex:1 1 auto;text-transform:lowercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.iui-code pre{margin:0;padding:10px 11px;overflow:auto;max-height:340px;font-family:var(--iui-mono);font-size:11.5px;line-height:1.55;background:var(--iui-code-bg);border:.5px solid var(--iui-line);border-radius:0 0 var(--iui-r-sm) var(--iui-r-sm)}.iui-copy{flex:0 0 auto;height:20px;padding:0 7px;font-family:inherit;font-size:10.5px;color:var(--iui-fg2);background:transparent;border:.5px solid var(--iui-line);border-radius:var(--iui-r-xs);cursor:pointer;opacity:.8;transition:opacity var(--iui-t-fast)}.iui-copy:hover{opacity:1;background:var(--iui-fill)}.iui-drop{display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer;background:var(--iui-surface);border:1px dashed var(--iui-line2);border-radius:var(--iui-r-md)}.iui-drop:hover{border-color:var(--iui-accent-edge);background:var(--iui-fill)}.iui-drop-hint{flex:1 1 auto;font-size:12px;color:var(--iui-fg3)}.iui-files{display:flex;flex-direction:column;gap:4px;margin-top:6px}.iui-file{display:flex;align-items:center;gap:8px;padding:3px 0;font-size:12px}.iui-file b{font-weight:600;word-break:break-all}.iui-file-size{color:var(--iui-fg3);font-variant-numeric:tabular-nums}.iui-file .iui-btn{height:20px;padding:0 7px;font-size:10.5px}.iui-diff{margin:0 0 8px;overflow:hidden;border:.5px solid var(--iui-line);border-radius:var(--iui-r-md)}.iui-diff-head{display:flex;align-items:center;gap:8px;padding:5px 10px;font-size:11px;color:var(--iui-fg3);background:var(--iui-code-banner);border-bottom:.5px solid var(--iui-line)}.iui-diff-name{font-family:var(--iui-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.iui-diff-stat{margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums}.iui-diff-stat .is-add{color:var(--iui-ok-text)}.iui-diff-stat .is-del{color:var(--iui-err-text)}.iui-diff-body{margin:0;max-height:360px;overflow:auto;font-family:var(--iui-mono);font-size:11.5px;line-height:1.55}.iui-dl{display:flex;white-space:pre}.iui-dl-n{flex:0 0 auto;min-width:32px;padding:0 6px;text-align:right;color:var(--iui-dim);user-select:none;font-variant-numeric:tabular-nums}.iui-dl-s{flex:0 0 auto;width:14px;text-align:center;color:var(--iui-fg3)}.iui-dl-t{flex:1 1 auto;padding-right:8px;overflow-wrap:anywhere}.iui-dl.is-add{background:var(--iui-add-fill)}.iui-dl.is-del{background:var(--iui-del-fill)}.iui-dl.is-skip{font-style:italic;opacity:.5}.iui-tl{margin:0 0 8px;padding-left:3px}.iui-tl-item{position:relative;padding:0 0 11px 18px;border-left:1px solid var(--iui-line)}.iui-tl-item:last-child{padding-bottom:0;border-left-color:transparent}.iui-tl-dot{position:absolute;left:-4.5px;top:5px;width:8px;height:8px;border-radius:50%;corner-shape:round;background:var(--iui-accent)}.iui-tl-item.is-ok .iui-tl-dot{background:var(--iui-ok)}.iui-tl-item.is-warn .iui-tl-dot{background:var(--iui-warn)}.iui-tl-item.is-error .iui-tl-dot{background:var(--iui-err)}.iui-tl-at{font-size:10.5px;color:var(--iui-fg3);font-variant-numeric:tabular-nums}.iui-tl-title{font-size:12.5px;font-weight:600}.iui-tl-text{font-size:12px;color:var(--iui-fg2);white-space:pre-wrap}.iui-tree{margin:0 0 8px;font-size:12.5px}.iui-tree ul.iui-tree-list{margin:0;padding:0 0 0 16px;list-style:none;border-left:1px solid var(--iui-line)}.iui-tree > ul.iui-tree-list{border-left:0;padding-left:0}.iui-tree-row{display:flex;align-items:center;gap:6px;padding:2px 6px;border-radius:var(--iui-r-xs)}.iui-tree-row:hover{background:var(--iui-fill)}.iui-tree-row.is-on{background:var(--iui-fill2)}.iui-tree-check{flex:0 0 auto;width:15px;height:15px;margin:0;accent-color:var(--iui-accent)}.iui-tree-toggle{flex:0 0 auto;width:14px;padding:0;border:0;background:none;color:var(--iui-fg3);font-size:9px;line-height:1;cursor:pointer}.iui-tree-toggle:hover{color:var(--iui-fg)}.iui-tree-toggle.is-leaf{visibility:hidden}.iui-prog{margin:0 0 8px;display:flex;flex-direction:column;gap:8px}.iui-prog-row{font-size:12px}.iui-prog-head{display:flex;justify-content:space-between;gap:8px;margin-bottom:3px}.iui-prog-val{color:var(--iui-fg3);font-variant-numeric:tabular-nums;white-space:nowrap}.iui-prog-bar{height:6px;border-radius:3px;background:var(--iui-fill2);overflow:hidden}.iui-prog-fill{height:100%;border-radius:3px;background:var(--iui-accent-fill);animation:iui-fade .25s var(--iui-ease)}.iui-prog-fill.is-ok{background:var(--iui-ok-fill)}.iui-prog-fill.is-warn{background:var(--iui-warn-fill)}.iui-prog-fill.is-error{background:var(--iui-err-fill)}.iui-tabs{margin:0 0 8px}.iui-tabbar{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:9px;border-bottom:.5px solid var(--iui-line)}.iui-tab{padding:5px 10px;border:0;border-bottom:1.5px solid transparent;margin-bottom:-.5px;background:none;color:var(--iui-fg3);font-family:inherit;font-size:12.5px;cursor:pointer;border-radius:var(--iui-r-xs) var(--iui-r-xs) 0 0}.iui-tab:hover{color:var(--iui-fg);background:var(--iui-fill)}.iui-tab.is-on{color:var(--iui-fg);font-weight:600;border-bottom-color:var(--iui-accent)}.iui-tab-body{display:flex;flex-direction:column;gap:11px}.iui-scroll::-webkit-scrollbar,.iui-table-wrap::-webkit-scrollbar,.iui-pre::-webkit-scrollbar,.iui-diff-body::-webkit-scrollbar,.iui-code pre::-webkit-scrollbar{width:9px;height:9px}.iui-scroll::-webkit-scrollbar-thumb,.iui-table-wrap::-webkit-scrollbar-thumb,.iui-pre::-webkit-scrollbar-thumb,.iui-diff-body::-webkit-scrollbar-thumb,.iui-code pre::-webkit-scrollbar-thumb{background:var(--dsw-alias-scrollbar-bg-l2,rgba(128,128,128,.32));border-radius:5px}.iui-scroll::-webkit-scrollbar-thumb:hover,.iui-table-wrap::-webkit-scrollbar-thumb:hover,.iui-pre::-webkit-scrollbar-thumb:hover,.iui-diff-body::-webkit-scrollbar-thumb:hover,.iui-code pre::-webkit-scrollbar-thumb:hover{background:var(--dsw-alias-scrollbar-hover-l2,rgba(128,128,128,.5))}@keyframes iui-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}@keyframes iui-fade{from{opacity:0}to{opacity:1}}@keyframes iui-pop{from{transform:scale(.97)}to{transform:scale(1)}}.iui-answered{animation:iui-fade var(--iui-t) var(--iui-ease)}.iui-step-body,.iui-tab-body{animation:iui-in .16s var(--iui-ease)}.iui-card,.iui-btn,.iui-tr--pick,.iui-tab,.iui-tree-row{transition:background var(--iui-t-fast) var(--iui-ease),border-color var(--iui-t-fast) var(--iui-ease),color var(--iui-t-fast) var(--iui-ease),transform 90ms var(--iui-ease)}.iui-card.is-on{animation:iui-pop .13s var(--iui-ease)}@media (max-width:560px){.iui-panel{padding:10px 11px 11px;gap:9px;border-radius:var(--iui-r-md)}.iui-body{gap:9px}.iui-cards{grid-template-columns:1fr}.iui-grid{grid-template-columns:1fr !important}.iui-grid.iui-scroll{max-height:220px !important}.iui-title{font-size:14px}.iui-foot{gap:6px}.iui-foot .iui-btn{flex:1 1 auto;justify-content:center}.iui-table{font-size:12px}.iui-tab{padding:5px 8px}.iui-wizard .iui-nav .iui-btn{flex:1 1 auto;justify-content:center}}@media (prefers-reduced-motion:reduce){.iui-panel,.iui-answered,.iui-step-body,.iui-tab-body,.iui-card.is-on,.iui-prog-fill{animation:none}.iui-card,.iui-btn,.iui-tr--pick,.iui-tab,.iui-tree-row{transition:none}.iui-btn:active:not(:disabled){transform:none}}.iui-btn--icon{padding:0;min-width:30px;font-size:14px;line-height:1}.iui-reload{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;padding:0;font:inherit;font-size:15px;line-height:1;color:var(--iui-dim);background:transparent;border:1px solid transparent;border-radius:var(--iui-r-sm);cursor:pointer;transition:background var(--iui-t-fast) var(--iui-ease),color var(--iui-t-fast) var(--iui-ease)}.iui-reload:hover{color:var(--iui-fg);background:var(--iui-fill)}.iui-reload:active{background:var(--iui-fill-a)}
+</style>
+</head>
+<body>
+<header class="pv-head">
+	<h1>dsh-intelligent-ui · 组件预览</h1>
+	<button class="pv-toggle" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark';stamp()">切换明/暗</button>
+</header>
+<p class="pv-note">静态预览：由 <code>node test/preview.mjs</code> 从 lib/index.js 的 GALLERY_SPEC 生成，使用插件自己的样式表。DSH 令牌在此处填的是近似值，实际界面里由 DSH 主题提供。</p>
+<div class="iui-panel pv-panel"><div class="iui-eyebrow"><span class="iui-dot"></span><span class="iui-eyebrow-label">Intelligent UI · 组件库</span><span class="iui-ver">v0.12.0</span></div><p class="iui-sub">interactive_ui 能画出的每一种控件；这块面板是只读的（readonly: true），不需要作答。</p>
+</div>
+<main class="pv-grid">
+		<section class="pv-cell">
+			<div class="pv-kind">markdown</div>
+			<div class="iui-panel"><div class="iui-md"><p><strong>markdown</strong> 元素支持常用 Markdown：标题、列表、引用、<code>行内代码</code>、代码围栏（带语言标签与复制按钮）、 <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer noopener">链接</a> 和表格。</p><h2>二级标题</h2><ul><li>无序列表项</li><li>另一个列表项</li></ul><blockquote>引用块，用来放上下文或警告。</blockquote><div class="iui-code"><div class="iui-code-head"><span class="iui-code-lang">js</span><button type="button" class="iui-copy">copy</button></div><pre><code>const answer = await interactive_ui({ elements: [{ kind: &quot;radio&quot;, id: &quot;pick&quot;, options: [&quot;A&quot;, &quot;B&quot;] }] })</code></pre></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">text</div>
+			<div class="iui-panel"><p class="iui-text iui-text--ok">text 元素：tone 可为 ok / warn / error / quote，也可写 format:&quot;markdown&quot;。</p></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">text</div>
+			<div class="iui-panel"><p class="iui-text iui-text--quote">面板会出现在对话里，答案作为这次工具调用的返回值回灌给模型。</p></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">radio</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">radio · 选项卡片</span><div class="iui-cards"><button type="button" class="iui-card is-on"><span class="iui-card-title">卡片一</span><span class="iui-card-desc">带一行说明</span></button><button type="button" class="iui-card"><span class="iui-card-title">卡片二</span></button></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">select</div>
+			<div class="iui-panel"><label class="iui-field"><span class="iui-label">select · 下拉选择</span><span class="iui-select-wrap"><select class="iui-select" value="A"><option value="">— select · 下拉选择 —</option><option value="A">A</option><option value="B">B</option></select></span></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">multiselect</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">multiselect · 多选（答案是数组）</span><div class="iui-grid" style="grid-template-columns:repeat(2,minmax(0,1fr))"><label class="iui-check"><input type="checkbox" class="iui-pick" checked /><span><span class="iui-card-title">一</span></span></label><label class="iui-check"><input type="checkbox" class="iui-pick" /><span><span class="iui-card-title">二</span></span></label><label class="iui-check"><input type="checkbox" class="iui-pick" /><span><span class="iui-card-title">三</span></span></label><label class="iui-check"><input type="checkbox" class="iui-pick" /><span><span class="iui-card-title">四</span></span></label></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">checkbox</div>
+			<div class="iui-panel"><label class="iui-check"><input type="checkbox" checked /><span><span class="iui-label">checkbox · 复选</span></span></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">checkbox</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">checkbox + options · 多选组（答案是数组）</span><div class="iui-grid" style="grid-template-columns:repeat(1,minmax(0,1fr))"><label class="iui-check"><input type="checkbox" class="iui-pick" /><span><span class="iui-card-title">一</span></span></label><label class="iui-check"><input type="checkbox" class="iui-pick" checked /><span><span class="iui-card-title">二</span></span></label><label class="iui-check"><input type="checkbox" class="iui-pick" /><span><span class="iui-card-title">三</span></span></label></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">switch</div>
+			<div class="iui-panel"><label class="iui-check"><input type="checkbox" /><span><span class="iui-label">switch · 开关（值仍是布尔）</span></span></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">slider</div>
+			<div class="iui-panel"><label class="iui-field"><span class="iui-field"><span class="iui-row"><span class="iui-label">slider · 滑杆</span><span class="iui-value">4<span class="iui-unit"> 秒</span></span></span><input type="range" class="iui-range" min="0" max="10" step="1" value="4" /></span></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">number</div>
+			<div class="iui-panel"><label class="iui-field"><span class="iui-label">number · 数字</span><span class="iui-inline"><input class="iui-input" type="number" placeholder="" value="3" min="1" max="99" /></span></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">input</div>
+			<div class="iui-panel"><label class="iui-field"><span class="iui-row"><span class="iui-label">input · 单行文本（带必填标记与字数）<i class="iui-req">*</i></span><span class="iui-count">0/24</span></span><input class="iui-input" type="text" placeholder="随便写点什么" value="" maxlength="24" /></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">date</div>
+			<div class="iui-panel"><label class="iui-field"><span class="iui-label">date · 日期</span><input class="iui-input" type="date" placeholder="" value="" /></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">time</div>
+			<div class="iui-panel"><label class="iui-field"><span class="iui-label">time · 时间</span><input class="iui-input" type="time" placeholder="" value="" /></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">textarea</div>
+			<div class="iui-panel"><label class="iui-field"><span class="iui-label">textarea · 多行文本</span><textarea class="iui-area" rows="2" placeholder="多行输入" value=""></textarea></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">path</div>
+			<div class="iui-panel"><label class="iui-field"><span class="iui-label">path · 宿主路径（「浏览…」调系统对话框）</span><span class="iui-inline"><input class="iui-input" type="text" placeholder="path/to/folder" value="" /></span></label></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">upload</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">upload · 文件上传（答案里带回真实路径）</span><label class="iui-drop"><input type="file" style="display:none" multiple /><span class="iui-drop-hint">点击选择文件，或把它们拖到这里</span><span class="iui-btn iui-btn--ghost">选择文件</span></label></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">form</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">form · 表单（字段 id 变成答案的键）</span><div class="iui-form"><label class="iui-field"><span class="iui-row"><span class="iui-hint">名称（必填）<i class="iui-req">*</i></span><span class="iui-count">0/12</span></span><input class="iui-input" type="text" placeholder="一个字段" value="" /></label><label class="iui-field"><span class="iui-hint">数量</span><input class="iui-input" type="number" placeholder="" value="1" /></label></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">table</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">table · 表格（点行选中）</span><div class="iui-table-wrap"><table class="iui-table"><thead><tr><th style="width:1.6em"></th><th>键</th><th class="iui-td--num">值</th></tr></thead><tbody><tr class="iui-tr--pick"><td><span class="iui-pick" style="display:inline-block;border-radius:50%;border:1px solid var(--iui-line);background:transparent"></span></td><td title="alpha">alpha</td><td class="iui-td--num" title="1">1</td></tr><tr class="iui-tr--pick"><td><span class="iui-pick" style="display:inline-block;border-radius:50%;border:1px solid var(--iui-line);background:transparent"></span></td><td title="beta">beta</td><td class="iui-td--num" title="2">2</td></tr></tbody></table></div><span class="iui-hint">Nothing selected yet</span></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">wizard</div>
+			<div class="iui-panel"><div class="iui-wizard"><span class="iui-label">wizard · 多步向导</span><div class="iui-steps"><button type="button" class="iui-step is-on" style="background:transparent;border:0px;padding:2px 4px;cursor:pointer;font:inherit"><span class="iui-step-no">1</span><span>第 1 步</span></button><button type="button" class="iui-step" style="background:transparent;border:0px;padding:2px 4px;cursor:pointer;font:inherit"><span class="iui-step-no">2</span><span>第 2 步</span></button></div><div class="iui-step-body"><div class="iui-field"><span class="iui-label">选一个</span><div class="iui-cards"><button type="button" class="iui-card is-on"><span class="iui-card-title">a</span></button><button type="button" class="iui-card"><span class="iui-card-title">b</span></button></div></div></div><div class="iui-nav"><button type="button" class="iui-btn iui-btn--ghost" disabled>Back</button><button type="button" class="iui-btn">Next</button><span class="iui-hint">1 / 2</span></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">chart</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">chart · 图表（内联 SVG）</span><svg class="iui-chart" viewBox="0 0 320 130" style="max-height:130px" role="img"><line x1="26" y1="112" x2="316" y2="112" stroke="var(--iui-line)" stroke-width="1" /><g><rect x="54.666666666666664" y="70.85714285714286" width="38" height="41.14285714285714" rx="3" fill="var(--iui-accent-fill, #3b82f6)" /><text x="73.66666666666666" y="66.85714285714286" text-anchor="middle" style="font-weight:600">3</text><text x="73.66666666666666" y="124" text-anchor="middle">一</text></g><g><rect x="150" y="16" width="38" height="96" rx="3" fill="var(--iui-ok-fill, #22c55e)" /><text x="169" y="12" text-anchor="middle" style="font-weight:600">7</text><text x="169" y="124" text-anchor="middle">二</text></g><g><rect x="245.33333333333331" y="43.42857142857143" width="38" height="68.57142857142857" rx="3" fill="var(--iui-warn-fill, #f59e0b)" /><text x="264.3333333333333" y="39.42857142857143" text-anchor="middle" style="font-weight:600">5</text><text x="264.3333333333333" y="124" text-anchor="middle">三</text></g></svg><div class="iui-legend"><span class="iui-legend-item"><span class="iui-swatch" style="background:var(--iui-accent-fill, #3b82f6)"></span><span>一</span> <b>3 项</b></span><span class="iui-legend-item"><span class="iui-swatch" style="background:var(--iui-ok-fill, #22c55e)"></span><span>二</span> <b>7 项</b></span><span class="iui-legend-item"><span class="iui-swatch" style="background:var(--iui-warn-fill, #f59e0b)"></span><span>三</span> <b>5 项</b></span></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">diff</div>
+			<div class="iui-panel"><div class="iui-field"><div class="iui-diff"><div class="iui-diff-head"><span class="iui-diff-name">diff · 行级差异（未变行会被折叠）</span><span class="iui-diff-stat"><span class="is-add">+2</span> <span class="is-del">−1</span></span></div><div class="iui-diff-body"><div class="iui-dl"><span class="iui-dl-n">1</span><span class="iui-dl-n">1</span><span class="iui-dl-s"> </span><span class="iui-dl-t">alpha</span></div><div class="iui-dl is-del"><span class="iui-dl-n">2</span><span class="iui-dl-n"></span><span class="iui-dl-s">−</span><span class="iui-dl-t">beta</span></div><div class="iui-dl is-add"><span class="iui-dl-n"></span><span class="iui-dl-n">2</span><span class="iui-dl-s">+</span><span class="iui-dl-t">BETA</span></div><div class="iui-dl"><span class="iui-dl-n">3</span><span class="iui-dl-n">3</span><span class="iui-dl-s"> </span><span class="iui-dl-t">gamma</span></div><div class="iui-dl is-skip"><span class="iui-dl-n">⋯</span><span class="iui-dl-s"> </span><span class="iui-dl-t">⋯ 1 unchanged line</span></div><div class="iui-dl"><span class="iui-dl-n">5</span><span class="iui-dl-n">5</span><span class="iui-dl-s"> </span><span class="iui-dl-t">epsilon</span></div><div class="iui-dl is-add"><span class="iui-dl-n"></span><span class="iui-dl-n">6</span><span class="iui-dl-s">+</span><span class="iui-dl-t">zeta</span></div></div></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">timeline</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">timeline · 时间线</span><div class="iui-tl"><div class="iui-tl-item is-ok"><span class="iui-tl-dot"></span><div class="iui-tl-at">10:02</div><div class="iui-tl-title">安装</div><div class="iui-tl-text">plugin_manager install_bundle</div></div><div class="iui-tl-item is-warn"><span class="iui-tl-dot"></span><div class="iui-tl-at">10:05</div><div class="iui-tl-title">重启</div><div class="iui-tl-text">host 模块被重新 import</div></div><div class="iui-tl-item is-ok"><span class="iui-tl-dot"></span><div class="iui-tl-at">10:06</div><div class="iui-tl-title">验收</div><div class="iui-tl-text">面板把答案交回工具</div></div></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">tree</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">tree · 复选框树（答案 = 勾选的 id 数组）</span><div class="iui-tree"><ul class="iui-tree-list"><li><div class="iui-tree-row"><button type="button" class="iui-tree-toggle">▾</button><input type="checkbox" class="iui-tree-check" /><span class="iui-tree-label">lib/</span></div><ul class="iui-tree-list"><li><div class="iui-tree-row is-on"><span class="iui-tree-toggle is-leaf">•</span><input type="checkbox" class="iui-tree-check" checked /><span class="iui-tree-label">index.js (host)</span></div></li><li><div class="iui-tree-row"><span class="iui-tree-toggle is-leaf">•</span><input type="checkbox" class="iui-tree-check" /><span class="iui-tree-label">client.js (browser)</span></div></li></ul></li><li><div class="iui-tree-row"><button type="button" class="iui-tree-toggle">▾</button><input type="checkbox" class="iui-tree-check" /><span class="iui-tree-label">test/</span></div><ul class="iui-tree-list"><li><div class="iui-tree-row"><span class="iui-tree-toggle is-leaf">•</span><input type="checkbox" class="iui-tree-check" /><span class="iui-tree-label">selftest.mjs</span></div></li></ul></li></ul></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">progress</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">progress · 进度条（只读）</span><div class="iui-prog"><div class="iui-prog-row"><div class="iui-prog-head"><span>host 自测</span><span class="iui-prog-val">20 / 20</span></div><div class="iui-prog-bar"><div class="iui-prog-fill is-ok" style="width:100%"></div></div></div><div class="iui-prog-row"><div class="iui-prog-head"><span>client 自测</span><span class="iui-prog-val">26 / 26</span></div><div class="iui-prog-bar"><div class="iui-prog-fill is-ok" style="width:100%"></div></div></div><div class="iui-prog-row"><div class="iui-prog-head"><span>文档</span><span class="iui-prog-val">6 / 10</span></div><div class="iui-prog-bar"><div class="iui-prog-fill is-warn" style="width:60%"></div></div></div></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">tabs</div>
+			<div class="iui-panel"><div class="iui-field"><span class="iui-label">tabs · 标签页（内层 id 直接进 values）</span><div class="iui-tabs"><div class="iui-tabbar"><button type="button" class="iui-tab is-on">第一页</button><button type="button" class="iui-tab">第二页</button></div><div class="iui-tab-body"><label class="iui-field"><span class="iui-label">标签页里的输入框</span><input class="iui-input" type="text" placeholder="" value="" /></label></div></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">button</div>
+			<div class="iui-panel"><button type="button" class="iui-btn iui-btn--primary">button · 点一下即以该 id 作答</button></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">link</div>
+			<div class="iui-panel"><a class="iui-link" href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noreferrer noopener">link · 外链（纯展示）</a></div>
+		</section>
+</main>
+<h2 class="pv-h2">回答之后</h2>
+<p class="pv-note">面板提交 / 取消之后的样子：逐项把答案还原成标签、勾选、数值和文件，而不是一段 JSON。</p>
+<main class="pv-grid">
+		<section class="pv-cell">
+			<div class="pv-kind">answered · 单选 / 开关 / 滑块 / 备注（折叠态）</div>
+			<div class="iui-panel"><div class="iui-answered"><div class="iui-ans-head"><span class="iui-ans-verdict is-ok">✓ 已提交</span><button type="button" class="iui-btn iui-btn--ghost iui-btn--icon iui-ans-copy" title="复制答案 JSON" aria-label="复制答案 JSON">⧉</button></div><details class="iui-ans-details"><summary class="iui-ans-more">查看答案 · 4 项</summary><div class="iui-ans-rows"><div class="iui-ans-row"><div class="iui-ans-k">目标环境</div><div class="iui-ans-v"><span class="iui-chip is-on">生产</span></div></div><div class="iui-ans-row"><div class="iui-ans-k">保留旧版本</div><div class="iui-ans-v"><span class="iui-chip is-off">✗ 关闭</span></div></div><div class="iui-ans-row"><div class="iui-ans-k">副本数</div><div class="iui-ans-v"><span class="iui-ans-num"><span class="iui-ans-bar"><i style="width:67%"></i></span><b>7 个</b></span></div></div><div class="iui-ans-row"><div class="iui-ans-k">备注</div><div class="iui-ans-v"><span class="iui-ans-text">周五晚上发</span></div></div></div></details></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">answered · 同一块面板（点开之后）</div>
+			<div class="iui-panel"><div class="iui-answered"><div class="iui-ans-head"><span class="iui-ans-verdict is-ok">✓ 已提交</span><button type="button" class="iui-btn iui-btn--ghost iui-btn--icon iui-ans-copy" title="复制答案 JSON" aria-label="复制答案 JSON">⧉</button></div><details class="iui-ans-details" open><summary class="iui-ans-more">查看答案 · 4 项</summary><div class="iui-ans-rows"><div class="iui-ans-row"><div class="iui-ans-k">目标环境</div><div class="iui-ans-v"><span class="iui-chip is-on">生产</span></div></div><div class="iui-ans-row"><div class="iui-ans-k">保留旧版本</div><div class="iui-ans-v"><span class="iui-chip is-off">✗ 关闭</span></div></div><div class="iui-ans-row"><div class="iui-ans-k">副本数</div><div class="iui-ans-v"><span class="iui-ans-num"><span class="iui-ans-bar"><i style="width:67%"></i></span><b>7 个</b></span></div></div><div class="iui-ans-row"><div class="iui-ans-k">备注</div><div class="iui-ans-v"><span class="iui-ans-text">周五晚上发</span></div></div></div></details></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">answered · 多选 / 树 / 表格</div>
+			<div class="iui-panel"><div class="iui-answered"><div class="iui-ans-head"><span class="iui-ans-verdict is-ok">✓ 已提交</span><button type="button" class="iui-btn iui-btn--ghost iui-btn--icon iui-ans-copy" title="复制答案 JSON" aria-label="复制答案 JSON">⧉</button></div><details class="iui-ans-details" open><summary class="iui-ans-more">查看答案 · 4 项</summary><div class="iui-ans-rows"><div class="iui-ans-row"><div class="iui-ans-k">标签</div><div class="iui-ans-v"><span class="iui-chip is-on">后端</span></div></div><div class="iui-ans-row"><div class="iui-ans-k">范围</div><div class="iui-ans-v"><span class="iui-chip is-on">ui</span></div></div><div class="iui-ans-row"><div class="iui-ans-k">改动行</div><div class="iui-ans-v"><span class="iui-chip is-on">src/ui/b.ts</span></div></div><div class="iui-ans-row"><div class="iui-ans-k">说明</div><div class="iui-ans-v"><div class="iui-ans-block">第一行
+第二行</div></div></div></div></details></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">answered · 表单 + 上传</div>
+			<div class="iui-panel"><div class="iui-answered"><div class="iui-ans-head"><span class="iui-ans-verdict is-ok">✓ 已提交</span><button type="button" class="iui-btn iui-btn--ghost iui-btn--icon iui-ans-copy" title="复制答案 JSON" aria-label="复制答案 JSON">⧉</button></div><details class="iui-ans-details" open><summary class="iui-ans-more">查看答案 · 3 项</summary><div class="iui-ans-rows"><div class="iui-ans-row"><div class="iui-ans-k">工单</div><div class="iui-ans-v"><div class="iui-ans-group"><div class="iui-ans-row"><div class="iui-ans-k">标题</div><div class="iui-ans-v"><span class="iui-ans-text">登录 500</span></div></div><div class="iui-ans-row"><div class="iui-ans-k">数量</div><div class="iui-ans-v"><span class="iui-ans-num"><b>3</b></span></div></div></div></div></div><div class="iui-ans-row"><div class="iui-ans-k">附件</div><div class="iui-ans-v"><span class="iui-chip iui-chip--mono" title="C:/tmp/trace.log">trace.log · 20.0 KB</span></div></div><div class="iui-ans-row"><div class="iui-ans-k">输出目录</div><div class="iui-ans-v"><span class="iui-chip iui-chip--mono" title="C:/logs/2026">C:/logs/2026</span></div></div></div></details></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">answered · 向导（按步分组）</div>
+			<div class="iui-panel"><div class="iui-answered"><div class="iui-ans-head"><span class="iui-ans-verdict is-ok">✓ 已提交</span><button type="button" class="iui-btn iui-btn--ghost iui-btn--icon iui-ans-copy" title="复制答案 JSON" aria-label="复制答案 JSON">⧉</button></div><details class="iui-ans-details" open><summary class="iui-ans-more">查看答案 · 1 项</summary><div class="iui-ans-rows"><div class="iui-ans-row"><div class="iui-ans-k">新建项目</div><div class="iui-ans-v"><div class="iui-ans-group"><div class="iui-ans-group"><div class="iui-ans-gtitle">名字</div><div class="iui-ans-row"><div class="iui-ans-k">项目名</div><div class="iui-ans-v"><span class="iui-ans-text">dsh-intelligent-ui</span></div></div></div><div class="iui-ans-group"><div class="iui-ans-gtitle">范围</div><div class="iui-ans-row"><div class="iui-ans-k">规模</div><div class="iui-ans-v"><span class="iui-chip is-on">大</span></div></div></div></div></div></div></div></details></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">answered · 点了快捷按钮（没有可折叠的行）</div>
+			<div class="iui-panel"><div class="iui-answered"><div class="iui-ans-head"><span class="iui-ans-verdict is-act">⚡ 按了按钮</span><span class="iui-chip is-on">⚡ 重试</span><button type="button" class="iui-btn iui-btn--ghost iui-btn--icon iui-ans-copy" title="复制答案 JSON" aria-label="复制答案 JSON">⧉</button></div></div></div>
+		</section>
+		<section class="pv-cell">
+			<div class="pv-kind">answered · 取消（没有答案）</div>
+			<div class="iui-panel"><div class="iui-answered"><div class="iui-ans-head"><span class="iui-ans-verdict is-off">⊘ 已取消</span><button type="button" class="iui-btn iui-btn--ghost iui-btn--icon iui-ans-copy" title="复制答案 JSON" aria-label="复制答案 JSON">⧉</button></div></div></div>
+		</section>
+</main>
+<h2 class="pv-h2">历史作答</h2>
+<p class="pv-note">interactive_ui_history 现在会顺手留下一块只读快照：最近的作答按页签分页，每页是一条时间线。</p>
+<main class="pv-grid">
+		<section class="pv-cell pv-cell--wide">
+			<div class="pv-kind">interactive_ui_history · 只读分页快照</div>
+			<div class="iui-panel"><div class="iui-head"><div class="iui-eyebrow"><span class="iui-dot"></span><span>Interactive panel</span><span class="iui-ver">v0.12.0</span></div><div class="iui-title">Intelligent UI · 历史作答</div><div class="iui-subtitle">2 页 · 点页签翻 · 本会话最近 11 条记录 · 只读</div></div><div class="iui-body"><div class="iui-field"><div class="iui-tabs"><div class="iui-tabbar"><button type="button" class="iui-tab is-on">第 1 页</button><button type="button" class="iui-tab">第 2 页</button></div><div class="iui-tab-body"><div class="iui-field"><div class="iui-tl"><div class="iui-tl-item is-ok"><span class="iui-tl-dot"></span><div class="iui-tl-at">11-06 19:32</div><div class="iui-tl-title">Where should I deploy?</div><div class="iui-tl-text">已提交 · env=prod, replicas=7</div></div><div class="iui-tl-item is-ok"><span class="iui-tl-dot"></span><div class="iui-tl-at">11-06 18:04</div><div class="iui-tl-title">重跑这个任务？</div><div class="iui-tl-text">按了按钮 · retry</div></div><div class="iui-tl-item"><span class="iui-tl-dot"></span><div class="iui-tl-at">11-06 16:20</div><div class="iui-tl-title">发布方案确认</div><div class="iui-tl-text">已取消</div></div><div class="iui-tl-item is-warn"><span class="iui-tl-dot"></span><div class="iui-tl-at">11-06 13:11</div><div class="iui-tl-title">这次改动要写文档吗</div><div class="iui-tl-text">会话中断</div></div><div class="iui-tl-item"><span class="iui-tl-dot"></span><div class="iui-tl-at">11-06 05:02</div><div class="iui-tl-title">Intelligent UI · 组件库</div><div class="iui-tl-text">只读展示</div></div><div class="iui-tl-item is-ok"><span class="iui-tl-dot"></span><div class="iui-tl-at">11-05 23:47</div><div class="iui-tl-title">表单：上线工单</div><div class="iui-tl-text">已提交 · title=登录 500, qty=3</div></div><div class="iui-tl-item is-ok"><span class="iui-tl-dot"></span><div class="iui-tl-at">11-05 17:18</div><div class="iui-tl-title">范围多选</div><div class="iui-tl-text">已提交 · tags=2 项, scope=1 项</div></div><div class="iui-tl-item is-ok"><span class="iui-tl-dot"></span><div class="iui-tl-at">11-05 07:40</div><div class="iui-tl-title">今晚发不发</div><div class="iui-tl-text">已提交 · note=周五晚上发，别赶周一早上</div></div></div></div></div></div></div><p class="iui-text iui-text--warn">只画了最近 11 条（日志里共有 128 条）。要更早的记录，把 limit 调大或加 all_sessions。</p></div><div class="iui-hint">只读面板 · 无需作答</div></div>
+		</section>
+</main>
+<script>
+// mirror production: stamp the active scheme onto every panel so native controls
+// (select/checkbox/date/slider) follow the page instead of the OS
+function stamp() {
+	var dark = document.documentElement.dataset.theme === 'dark'
+	var list = document.querySelectorAll('.iui-panel')
+	for (var i = 0; i < list.length; i += 1) {
+		list[i].classList.toggle('is-dark', dark)
+		list[i].classList.toggle('is-light', !dark)
+	}
+}
+stamp()
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# dsh-intelligent-ui — conversation-inline interactive UI.
+#
+# Host half: registers the `interactive_ui` tool (the model renders a panel and
+# blocks on it) plus the loopback bridge /api/dsh-intelligent-ui used by the
+# browser half to fetch a panel spec and post the user's answer.
+#
+# Browser half: registers the `interactive_ui` key of the keyed slot
+# `tool.call.toolview`, so the panel renders inline in the transcript.
+- insert:
+    - id: intelligent-ui
+      name: dsh-intelligent-ui

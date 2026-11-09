@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Interactive Panel",
+    "description": "Let the model render an operable panel inside the conversation and wait for your answer: choices, forms, switches, sliders, tables, multi-step wizards, charts, diffs, timelines, checkbox trees, progress bars, native path picks and file uploads. Every answer-collecting panel carries a note box, answers are logged and replayable, and the model is nudged to reach for a panel instead of asking in prose."
+  }
+}
